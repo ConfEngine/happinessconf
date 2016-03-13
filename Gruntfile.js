@@ -41,18 +41,20 @@ module.exports = function(grunt) {
             }
         },
         imagemin: { 
-            target: { 
+            dynamic: { 
                 files: [{
-                    cwd: 'img/',
+                    expand: true, 
+                    cwd: 'img/', 
                     src: ['**/*.{png,jpg,gif}'], 
-                    dest: 'build/img' 
+                    dest: 'build/img/' 
                 }]
             }
-        }
+        },
     });
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.registerTask('default', ['watch']);
 };

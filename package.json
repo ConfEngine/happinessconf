@@ -19,6 +19,7 @@
     "grunt-contrib-imagemin": "^1.0.0",
     "grunt-contrib-uglify": "^1.0.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-htmlmin": "^0.1.4",
     "grunt-sass": "^1.1.0",
     "pineapple-sass": "^1.11.14"
   }
