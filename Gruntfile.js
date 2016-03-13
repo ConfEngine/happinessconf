@@ -84,4 +84,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-replacer');
     grunt.loadNpmTasks('grunt-htmlmin');
     grunt.registerTask('default', ['watch']);
+    grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'imagemin', 'replacer', 'htmlmin']);
 };
