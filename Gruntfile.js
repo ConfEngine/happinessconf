@@ -39,6 +39,15 @@ module.exports = function(grunt) {
                     'build/js/app.min.js': ['src/js/app.js']
                 }
             }
+        },
+        imagemin: { 
+            target: { 
+                files: [{
+                    cwd: 'img/',
+                    src: ['**/*.{png,jpg,gif}'], 
+                    dest: 'build/img' 
+                }]
+            }
         }
     });
     grunt.loadNpmTasks('grunt-contrib-watch');
