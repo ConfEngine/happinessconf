@@ -50,29 +50,28 @@ module.exports = function(grunt) {
                 }]
             }
         },
-        htmlmin: {
-            file: {
-                options: {
-                    collapseWhitespace: true
-                },
-                files: {
-                    src: 'index.html',
-                    dest: 'build/'
-                }
-            }
-        },
         replacer: {
             index: {
                 options: {
                     replace: {
                         'src/css/main.css': 'css/main.min.css',
-                        'favicon.ico': '../favicon.ico',
                         'src/js/app.js': 'js/app.min.js',
                     }
                 },
                 files: [
-                    { src: ['index.html'], dest: 'build/index.html' }
+                    { src: ['index.html'], dest: 'build/html/index.html' }
                 ]
+            }
+        },
+        htmlmin: {  
+            dist: { 
+                options: {
+                    removeComments: true,
+                    collapseWhitespace: true
+                },
+                files: { 
+                    'build/index.html': 'build/html/index.html', 
+                }
             }
         }
     });
@@ -82,7 +81,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-replacer');
-    grunt.loadNpmTasks('grunt-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-htmlmin');
     grunt.registerTask('default', ['watch']);
     grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'imagemin', 'replacer', 'htmlmin']);
 };
