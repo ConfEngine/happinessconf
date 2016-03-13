@@ -40,21 +40,48 @@ module.exports = function(grunt) {
                 }
             }
         },
-        imagemin: { 
-            dynamic: { 
+        imagemin: {
+            dynamic: {
                 files: [{
-                    expand: true, 
-                    cwd: 'img/', 
-                    src: ['**/*.{png,jpg,gif}'], 
-                    dest: 'build/img/' 
+                    expand: true,
+                    cwd: 'img/',
+                    src: ['**/*.{png,jpg,gif}'],
+                    dest: 'build/img/'
                 }]
             }
         },
+        htmlmin: {
+            file: {
+                options: {
+                    collapseWhitespace: true
+                },
+                files: {
+                    src: 'index.html',
+                    dest: 'build/'
+                }
+            }
+        },
+        replacer: {
+            index: {
+                options: {
+                    replace: {
+                        'src/css/main.css': 'css/main.min.css',
+                        'favicon.ico': '../favicon.ico',
+                        'src/js/app.js': 'js/app.min.js',
+                    }
+                },
+                files: [
+                    { src: ['index.html'], dest: 'build/index.html' }
+                ]
+            }
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-replacer');
+    grunt.loadNpmTasks('grunt-htmlmin');
     grunt.registerTask('default', ['watch']);
 };
