@@ -5,16 +5,16 @@ module.exports = function(grunt) {
                 files: ['src/sass/main.scss'],
                 tasks: ['sass', 'cssmin'],
                 options: {
-                    spawn: false,
-                },
+                    spawn: false
+                }
             },
             js: {
                 files: ['src/js/app.js'],
                 tasks: ['uglify'],
                 options: {
-                    spawn: false,
-                },
-            },
+                    spawn: false
+                }
+            }
         },
         sass: {
             options: {
@@ -46,4 +46,4 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.registerTask('default', ['watch']);
-}
+};

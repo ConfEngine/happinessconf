@@ -32,3 +32,4 @@ build/Release
 # Created by .ignore support plugin (hsz.mobi)
 
 .idea
+deploy.sh
