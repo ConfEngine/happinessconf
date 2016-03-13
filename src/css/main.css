@@ -31,7 +31,7 @@ body {
 }
 
 .hero-section {
-  background-image: url("../../img/hero-bg2.png");
+  background-image: url("../../img/hero-bg.png");
   background-size: cover;
 }
 
@@ -367,7 +367,7 @@ body {
   padding: 20px;
 }
 
-.footer a {
+.footer a:not(.social-icon) {
   color: #fff;
   text-decoration: underline;
   margin: 0 5px;
@@ -434,4 +434,12 @@ iframe {
   font-weight: 400;
   font-size: 1.35em;
   text-transform: uppercase;
+}
+
+.quote {
+  vertical-align: top;
+}
+
+.social-icon {
+  margin: 0 5px;
 }
