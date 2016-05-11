@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 options: {
                     replace: {
                         'src/css/main.css': 'css/main.min.css',
-                        'src/js/app.js': 'js/app.min.js',
+                        'src/js/app.js': 'js/app.min.js'
                     }
                 },
                 files: [
@@ -70,7 +70,7 @@ module.exports = function(grunt) {
                     collapseWhitespace: true
                 },
                 files: { 
-                    'build/index.html': 'build/html/index.html', 
+                    'build/index.html': 'build/html/index.html'
                 }
             }
         }
