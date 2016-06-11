@@ -127,6 +127,7 @@ body {
   border-radius: 40px;
   margin-bottom: 80px;
   display: inline-block;
+  text-decoration: none !important;
   -webkit-transition: all 0.2s ease-in-out;
   -moz-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
@@ -137,31 +138,6 @@ body {
 .btn-register:hover {
   background-color: #02766b;
   text-decoration: none;
-  color: #fff;
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.45);
-}
-
-.btn-submit-proposal {
-  color: #fff;
-  border: 1px solid #dba324;
-  font-weight: 400;
-  background-color: #ffc124;
-  text-transform: uppercase;
-  padding: 12px;
-  font-size: 1em;
-  border-radius: 30px;
-  margin-bottom: 20px;
-  display: inline-block;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
-}
-
-.btn-submit-proposal:hover {
-  background-color: #ffb805;
-  text-decoration: underline;
   color: #fff;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.45);
 }
@@ -236,8 +212,29 @@ body {
   color: #fff;
 }
 
+.section-green li, .section-blue li {
+  font-weight: 300;
+  font-size: 1.15em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.section-green a, .section-blue a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.section-green a:hover, .section-blue a:hover {
+  color: #d9dcd9;
+  text-decoration: none;
+}
+
 .section-blue {
   background-color: #2A69B0;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .event-themes-section {
@@ -372,6 +369,7 @@ body {
   font-weight: 400;
   padding: 10px;
   color: #fff;
+  text-align: center;
 }
 
 .price-table td {

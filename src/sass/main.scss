@@ -1,10 +1,9 @@
 // Main Sass script
-
 // Partial imports
 @import "../../node_modules/pineapple-sass/build/pineapple-sass";
 
 @mixin fontWeight {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 // Global variables
@@ -12,420 +11,416 @@ $tint-green: #029487;
 $tint-dark: #343434;
 $tint-blue: #2A69B0;
 %lato {
-	font-family: 'Lato', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
+
 %cursive {
-	font-family: 'Dancing Script', cursive;
+  font-family: 'Dancing Script', cursive;
 }
 
 // Theme styles
 
 html,
 body {
-	font-size: 16px;
-	@extend %lato;
-	overflow-x: hidden;
-	background-color: $tint-green;
+  font-size: 16px;
+  @extend %lato;
+  overflow-x: hidden;
+  background-color: $tint-green;
 
-	@include media-s-screen {
-		font-size: 14px;
-	}
+  @include media-s-screen {
+    font-size: 14px;
+  }
 }
 
 .navigation {
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	@include backgroundOpacity($tint-green, .88);
-	z-index: 1;
-	display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  @include backgroundOpacity($tint-green, .88);
+  z-index: 1;
+  display: none;
 }
 
 .hero-section {
-	background-image: url('../../img/hero-bg.png');
-	background-size: cover;
+  background-image: url('../../img/hero-bg.png');
+  background-size: cover;
 }
 
 .hero-overlay {
-	@include backgroundOpacity(darken($tint-green, 20%), .72);
-	height: 100%;
-	width: 100%;
+  @include backgroundOpacity(darken($tint-green, 20%), .72);
+  height: 100%;
+  width: 100%;
 }
 
 .text-quote {
-	position: relative;
-	color: #fff;
-    font-weight: 300;
-    font-size: 1.35em;
-    border-bottom: 1px solid #fff;
-    border-top: 1px solid #fff;
-    padding: 20px;
-    margin: 0 auto 80px;
-    line-height: 1.45em;
-    font-style: italic;
+  position: relative;
+  color: #fff;
+  font-weight: 300;
+  font-size: 1.35em;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  padding: 20px;
+  margin: 0 auto 80px;
+  line-height: 1.45em;
+  font-style: italic;
 
-    i {
-    	font-size: 1em;
-    	margin-right: 4px;
-    }
+  i {
+    font-size: 1em;
+    margin-right: 4px;
+  }
 
-    @include media-s-screen {
-		@include fontWeight;
-	}
+  @include media-s-screen {
+    @include fontWeight;
+  }
 }
 
 .text-quote-author {
-	margin-top: 10px;
-	font-weight: 300;
+  margin-top: 10px;
+  font-weight: 300;
 }
 
 .main-title {
-	margin: 80px auto 0;
-	color: #fff;
-	font-size: 1.35em;
-	font-weight: 300;
+  margin: 80px auto 0;
+  color: #fff;
+  font-size: 1.35em;
+  font-weight: 300;
 
-	@include media-s-screen {
-		@include fontWeight;
-	}
+  @include media-s-screen {
+    @include fontWeight;
+  }
 }
 
 .conference-title {
-	@extend %cursive;
-	font-weight: 400;
-	font-size: 2.35em;
-	display: inline-block;
-	border-bottom: 2px solid #fff;
-	margin: 5px 0 80px;
-	padding-bottom: 7px;
-	text-shadow: 1px 2px 2px rgba(0,0,0,.55);
+  @extend %cursive;
+  font-weight: 400;
+  font-size: 2.35em;
+  display: inline-block;
+  border-bottom: 2px solid #fff;
+  margin: 5px 0 80px;
+  padding-bottom: 7px;
+  text-shadow: 1px 2px 2px rgba(0, 0, 0, .55);
 
-	@include media-s-screen {
-		font-size: 2.15em;
-	}
+  @include media-s-screen {
+    font-size: 2.15em;
+  }
 }
 
 .main-details {
-	color: #fff;
-	margin-bottom: 15px;
+  color: #fff;
+  margin-bottom: 15px;
 
-	@include media-s-screen {
-		@include fontWeight;
-	}
+  @include media-s-screen {
+    @include fontWeight;
+  }
 }
 
 .details-panel {
-	font-size: 1.35em;
-	margin: 0 10px;
-	font-weight: 300;
+  font-size: 1.35em;
+  margin: 0 10px;
+  font-weight: 300;
 }
 
 .btn-register {
-	color: #fff;
-	border: 1px solid $tint-green;
-	font-weight: 400;
-	background-color: $tint-green;
-	text-transform: uppercase;
-	padding: 12px 25px;
-	font-size: 1.25em;
-	border-radius: 40px;
-	margin-bottom: 80px;
-	display: inline-block;
-	@include transition(all .2s ease-in-out);
+  color: #fff;
+  border: 1px solid $tint-green;
+  font-weight: 400;
+  background-color: $tint-green;
+  text-transform: uppercase;
+  padding: 12px 25px;
+  font-size: 1.25em;
+  border-radius: 40px;
+  margin-bottom: 80px;
+  display: inline-block;
+  text-decoration: none !important;
+  @include transition(all .2s ease-in-out);
 
-	&:hover {
-		background-color: darken($tint-green, 6%);
-		text-decoration: none;
-		color: #fff;
-		box-shadow: 1px 2px 2px rgba(0,0,0,.45);
-	}
-}
-
-.btn-submit-proposal {
-	color: #fff;
-	border: 1px solid #dba324;
-	font-weight: 400;
-	background-color: #ffc124;
-	text-transform: uppercase;
-	padding: 12px;
-	font-size: 1em;
-	border-radius: 30px;
-	margin-bottom: 20px;
-	display: inline-block;
-	@include transition(all .2s ease-in-out);
-
-	&:hover {
-		background-color: darken(#ffc124, 6%);
-		text-decoration: underline;
-		color: #fff;
-		box-shadow: 1px 2px 2px rgba(0,0,0,.45);
-	}
+  &:hover {
+    background-color: darken($tint-green, 6%);
+    text-decoration: none;
+    color: #fff;
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, .45);
+  }
 }
 
 .header {
-	position: fixed;
-	right: 3%;
-	top: .5%;
-	color: #fff;
-	font-size: 2.5em;
-	@include cursorPointer;
-	@include dropShadow(1px 1px 1px rgba(0,0,0,.65));
-	z-index: 1000;
+  position: fixed;
+  right: 3%;
+  top: .5%;
+  color: #fff;
+  font-size: 2.5em;
+  @include cursorPointer;
+  @include dropShadow(1px 1px 1px rgba(0, 0, 0, .65));
+  z-index: 1000;
 
-	@include media-s-screen {
-		top: .2%;
-	}
+  @include media-s-screen {
+    top: .2%;
+  }
 }
 
 .section-wrapper,
 .venue-inner {
-	padding: 80px;
+  padding: 80px;
 
-	@include media-s-screen {
-		padding: 40px 20px;
-	}
+  @include media-s-screen {
+    padding: 40px 20px;
+  }
 }
 
 .section-heading {
-	margin: 0 0 30px;
-	color: $tint-green;
-	@extend %cursive;
-	font-size: 2.5em;
-	padding-bottom: 7px;
-	border-bottom: 2px solid $tint-green;
-	display: inline-block;
-	font-weight: 400;
-	text-transform: capitalize;
+  margin: 0 0 30px;
+  color: $tint-green;
+  @extend %cursive;
+  font-size: 2.5em;
+  padding-bottom: 7px;
+  border-bottom: 2px solid $tint-green;
+  display: inline-block;
+  font-weight: 400;
+  text-transform: capitalize;
 }
 
 .section-text {
-	font-weight: 300;
-	font-size: 1.15em;
-	color: $tint-dark;
-	margin-bottom: 20px;
+  font-weight: 300;
+  font-size: 1.15em;
+  color: $tint-dark;
+  margin-bottom: 20px;
 
-	@include media-s-screen {
-		@include fontWeight;
-	}
+  @include media-s-screen {
+    @include fontWeight;
+  }
 }
 
 .section-green {
-	background-color: $tint-green;
+  background-color: $tint-green;
 
-	.section-heading {
-		border-color: #fff;
-		color: #fff;
-	}
+  .section-heading {
+    border-color: #fff;
+    color: #fff;
+  }
 
-	.section-text {
-		color: #fff;
-	}
+  .section-text {
+    color: #fff;
+  }
+
+  li {
+    font-weight: 300;
+    font-size: 1.15em;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+
+    &:hover {
+      color: #d9dcd9;
+      text-decoration: none;
+    }
+  }
 }
 
 .section-blue {
-	@extend .section-green;
-	background-color: $tint-blue;
+  @extend .section-green;
+  background-color: $tint-blue;
+}
+
+.underline {
+  text-decoration: underline;
 }
 
 .event-themes-section {
-	background-color: #fff;
-    box-shadow: 2px 3px 6px rgba(0,0,0,.35);
-    width: 120%;
-    margin-left: -10%;
-    @include rotate(-3);
-    -webkit-backface-visibility: hidden;
+  background-color: #fff;
+  box-shadow: 2px 3px 6px rgba(0, 0, 0, .35);
+  width: 120%;
+  margin-left: -10%;
+  @include rotate(-3);
+  -webkit-backface-visibility: hidden;
 
-    @include media-s-screen {
-    	@include rotate(0);
-    	width: 100%;
-    	margin-left: 0;
-    }
+  @include media-s-screen {
+    @include rotate(0);
+    width: 100%;
+    margin-left: 0;
+  }
 }
 
 .event-themes-wrapper {
-	@include rotate(3);
+  @include rotate(3);
 
-	@include media-s-screen {
-		@include rotate(0);
-	}
+  @include media-s-screen {
+    @include rotate(0);
+  }
 }
 
 .about-icon {
-	color: $tint-green;
-	font-size: 2em;
-	margin-bottom: 10px;
-	display: inline-block;
-	font-weight: 400;
+  color: $tint-green;
+  font-size: 2em;
+  margin-bottom: 10px;
+  display: inline-block;
+  font-weight: 400;
 }
 
 .event-themes {
-	.section-text {
-		margin-bottom: 40px;
-	}
+  .section-text {
+    margin-bottom: 40px;
+  }
 }
 
 .speaker-image {
-	border-radius: 50%;
-	width: 120px;
-	height: auto;
+  border-radius: 50%;
+  width: 120px;
+  height: auto;
 }
 
 .speaker-name,
 .speaker-details,
 .talk-details {
-	color: #fff;
+  color: #fff;
 }
 
 .speaker-name {
-	font-size: 1.15em;
-	font-weight: 400;
+  font-size: 1.15em;
+  font-weight: 400;
 }
 
 .speaker-details {
-	font-size: .85em;
-	font-style: italic;
-	line-height: 17px;
-	margin-top: -5px;
+  font-size: .85em;
+  font-style: italic;
+  line-height: 17px;
+  margin-top: -5px;
 }
 
 .talk-details {
-	font-weight: 300;
-	margin-top: 20px;
+  font-weight: 300;
+  margin-top: 20px;
 
-	@include media-s-screen {
-		@include fontWeight;
-		margin-bottom: 20px;
-	}
+  @include media-s-screen {
+    @include fontWeight;
+    margin-bottom: 20px;
+  }
 }
 
 .speaker-row,
 .video-wrapper {
-	margin-bottom: 40px;
+  margin-bottom: 40px;
 
-	@include media-s-screen {
-		margin-bottom: 0;
-	}
+  @include media-s-screen {
+    margin-bottom: 0;
+  }
 }
 
 .section-past-videos {
-	background-color: #fff;
+  background-color: #fff;
 }
 
 .section-venue {
-	background-image: url('../../img/venue.jpg');
-	background-size: cover;
-	padding: 0;
+  background-image: url('../../img/venue.jpg');
+  background-size: cover;
+  padding: 0;
 }
 
 .btn-book {
-	margin: 40px 0 0;
+  margin: 40px 0 0;
 }
 
 .price-table {
-	width: 100%;
-	margin: 0 auto;
-	font-size: 1.15em;
-	border: 1px solid $tint-green;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1.15em;
+  border: 1px solid $tint-green;
 
-	th {
-		font-weight: 400;
-		padding: 10px;
-		color: #fff;
-	}
+  th {
+    font-weight: 400;
+    padding: 10px;
+    color: #fff;
+    text-align: center;
+  }
 
-	td {
-		font-weight: 300;
-		padding: 10px;
-	}
+  td {
+    font-weight: 300;
+    padding: 10px;
+  }
 
-	thead {
-		background-color: $tint-green;
-		border-top: 1px solid $tint-green;
-		border-bottom: 1px solid $tint-green;
-	}
+  thead {
+    background-color: $tint-green;
+    border-top: 1px solid $tint-green;
+    border-bottom: 1px solid $tint-green;
+  }
 }
 
 .footer {
-	background-color: darken($tint-green, 16%);
-	font-size: 1em;
-	font-weight: 300;
-	padding: 20px;
+  background-color: darken($tint-green, 16%);
+  font-size: 1em;
+  font-weight: 300;
+  padding: 20px;
 
-	a:not(.social-icon) {
-		color: #fff;
-		text-decoration: underline;
-		margin: 0 5px;
-	}
+  a:not(.social-icon) {
+    color: #fff;
+    text-decoration: underline;
+    margin: 0 5px;
+  }
 
-	i {
-		font-size: 1.35em;
-	}
+  i {
+    font-size: 1.35em;
+  }
 
-	.copyright {
-		color: #fff;
-		letter-spacing: -1px;
+  .copyright {
+    color: #fff;
+    letter-spacing: -1px;
 
-		@include media-s-screen {
-			display: block;
-			margin-top: 10px;
-		}
-	}
+    @include media-s-screen {
+      display: block;
+      margin-top: 10px;
+    }
+  }
 }
 
 iframe {
-	width: 100%;
-	height: 315px;
+  width: 100%;
+  height: 315px;
 
-	@include media-s-screen {
-		height: 220px;
-	}	
+  @include media-s-screen {
+    height: 220px;
+  }
 }
 
 .hero-row {
-	@include media-s-screen {
-		padding: 0 10px;
-	}	
+  @include media-s-screen {
+    padding: 0 10px;
+  }
 }
 
 .menu-trigger,
 .nav-link {
-	@include cursorPointer;
+  @include cursorPointer;
 }
 
 .nav-list {
-	padding: 0;
-	margin: 10% auto 0;
-	width: 100%;
-	text-align: center;
-	list-style: none;
+  padding: 0;
+  margin: 10% auto 0;
+  width: 100%;
+  text-align: center;
+  list-style: none;
 
-	@include media-s-screen {
-		margin-top: 22%;
-	}
+  @include media-s-screen {
+    margin-top: 22%;
+  }
 
-	li {
-		margin: 0 0 30px;
+  li {
+    margin: 0 0 30px;
 
-		a {
-			color: #fff;
-			font-weight: 400;
-			font-size: 1.35em;
-			text-transform: uppercase;
-		}
-	}
+    a {
+      color: #fff;
+      font-weight: 400;
+      font-size: 1.35em;
+      text-transform: uppercase;
+    }
+  }
 }
 
 .quote {
-	vertical-align: top;
+  vertical-align: top;
 }
 
 .social-icon {
-	margin: 0 5px;
+  margin: 0 5px;
 }
-
-
-
-
-
-
-

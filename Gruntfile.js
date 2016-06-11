@@ -53,13 +53,14 @@ module.exports = function(grunt) {
         replacer: {
             index: {
                 options: {
+                    reportError: true,
                     replace: {
                         'src/css/main.css': 'css/main.min.css',
                         'src/js/app.js': 'js/app.min.js'
                     }
                 },
                 files: [
-                    { src: ['index.html'], dest: 'build/html/index.html' }
+                    {expand: true, flatten: true, src: ['*.html'], dest: 'build/html/'}
                 ]
             }
         },
@@ -69,19 +70,32 @@ module.exports = function(grunt) {
                     removeComments: true,
                     collapseWhitespace: true
                 },
-                files: { 
-                    'build/index.html': 'build/html/index.html'
+                files: {
+                    'build/index.html': 'build/html/index.html',
+                    'build/speakers.html': 'build/html/speakers.html'
                 }
             }
+        },
+        copy: {
+            main: {
+                files: [
+                    {expand: true, src: ['*.ico'], dest: 'build/', filter: 'isFile'}
+                ]
+            }
+        },
+        clean : {
+            folder : [ "build/html" ]
         }
     });
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
     grunt.loadNpmTasks('grunt-replacer');
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
+    grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'imagemin', 'replacer', 'htmlmin']);
+    grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'imagemin', 'replacer', 'htmlmin', 'copy','clean']);
 };
